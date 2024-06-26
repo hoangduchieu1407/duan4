@@ -710,7 +710,7 @@ body {
   animation: fade var(--tr-duration-short) var(--tr-easing-linear) forwards;
 }
 
-@keyframes fage {
+@keyframes fade {
   0% {
     opacity: 0;
   }
@@ -896,11 +896,6 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: var(--spacing-4);
   color: var(--on-surface-variant);
   -webkit-user-select: none;
   user-select: none;
@@ -909,8 +904,65 @@ body {
 .empty-notes .material-symbols-rounded {
   font-size: 6.8rem;
   opacity: 0.25;
+  margin-block-end: var(--spacing-4);
+  margin-inline: auto;
 }
 
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+.card {
+  display: none;
+}
+.modal {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-inline: var(--spacing-6);
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-inline-start: var(--sidebar-width);
+  }
+
+  .overlay:not(.modal-overlay) {
+    display: none;
+  }
+
+  .sidebar {
+    visibility: visible;
+    left: 0;
+    height: 100vh;
+    grid-template-rows: repeat(3, max-content) 1fr max-content;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .sidebar.active {
+    transform: unset;
+  }
+
+  .sidebar .fab {
+    display: flex;
+  }
+  .main {
+    padding-inline: var(--spacing-10);
+  }
+
+  .menu-btn,
+  .main .fab {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main {
+    max-width: 1480px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
