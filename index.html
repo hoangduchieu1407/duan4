@@ -56,7 +56,7 @@
     <script type="module" src="./src/js/app.js"></script>
   </head>
   <body>
-    <header class="sidebar active" data-sidebar>
+    <header class="sidebar" data-sidebar>
       <div class="wrapper wrapper-1">
         <a href="/">
           <img
@@ -141,5 +141,141 @@
     </header>
 
     <div class="overlay" data-sidebar-overlay data-sidebar-togger></div>
+
+    <main class="main">
+      <div class="header">
+        <div class="wrapper">
+          <p class="title text-title-large" data-greeting>Good morning</p>
+          <span class="text text-body-medium" data-current-date
+            >Sat, Sep 22 2024</span
+          >
+        </div>
+
+        <button
+          class="theme-btn icon-btn large"
+          aria-label="Toggle theme"
+          data-tooltip="Toggle theme"
+          data-theme-btn
+        >
+          <span class="material-symbols-rounded dark-icon" aria-hidden="true"
+            >dark_mode</span
+          >
+          <span class="material-symbols-rounded light-icon" aria-hidden="true"
+            >light_mode</span
+          >
+
+          <div class="state-layer"></div>
+        </button>
+
+        <button
+          class="menu-btn icon-btn large"
+          aria-label="Open menu"
+          data-sidebar-toggler
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+          <div class="state-layer"></div>
+        </button>
+      </div>
+
+      <h2 class="title text-title-medium" data-note-panel-title>Notebook</h2>
+
+      <!--
+        #NODE LIST
+      -->
+
+      <div class="note-list" data-note-panel>
+        <div class="card">
+          <h3 class="card-title text-title-medium">Note title</h3>
+          <p class="card-text text-body-large">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            ipsum consequatur dignissimos praesentium magnam facere doloremque,
+            explicabo eaque nisi veniam ratione? Minus nobis qui aspernatur
+            veritatis temporibus vitae sed nulla.
+          </p>
+
+          <div class="wrapper">
+            <span class="card-time text-label-large">20 min ago</span
+            ><button
+              class="icon-btn large"
+              aria-label="Delete note"
+              data-tooltip="Delete note"
+            >
+              <span class="material-symbols-rounded" aria-hidden="true"
+                >delete</span
+              >
+              <div class="state-layer"></div>
+            </button>
+          </div>
+
+          <div class="state-layer"></div>
+        </div>
+      </div>
+
+      <!--
+        FAB button for mobile
+      -->
+
+      <button class="fab" data-note-create-btn>
+        <span class="material-symbols-rounded" aria-hidden="true">add</span>
+
+        <div class="state-layer"></div>
+      </button>
+
+      <div class="modal">
+        <button class="icon-btn large" aria-label="Close modal">
+          <span class="material-symbols-rounded" aria-hidden="true">close</span>
+          <div class="state-layer"></div>
+        </button>
+
+        <input
+          type="text"
+          placeholder="Untitled"
+          value="Untitled"
+          class="modal-title text-title-medium"
+          data-note-field
+        />
+
+        <textarea
+          placeholder="Take a note..."
+          class="modal-text text-body-large custom-scrollbar"
+          data-note-field
+        >
+Take a note...</textarea
+        >
+
+        <div class="modal-footer">
+          <span class="time text-label-large">20 min ago</span
+          ><button class="btn text" data-submit-btn>
+            <span class="text-label-large">Save</span>
+            <div class="state-layer"></div>
+          </button>
+        </div>
+      </div>
+
+      <div class="overlay modal-overlay" data-modal-overlay></div>
+
+      <div class="modal">
+        <h3 class="modal-title text-title-medium">
+          Are you sure you want to delete <strong>Node title</strong>?
+        </h3>
+        <div class="modal-footer">
+          <button class="btn text">
+            <span class="text-label-large">Cancel</span>
+            <div class="state-layer"></div>
+          </button>
+          <button class="btn fill">
+            <span class="text-label-large">Delete</span>
+            <div class="state-layer"></div>
+          </button>
+        </div>
+      </div>
+
+      <span class="tooltip text-body-small">Tooltip text</span>
+
+      <div class="empty-notes">
+        <span class="material-symbols-rounded" aria-hidden="true"></span>
+        <div class="text-headline-small">No notes</div>
+      </div>
+    </main>
   </body>
 </html>
